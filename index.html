@@ -58,18 +58,30 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
 
-      <img src="assets/img/ricardo-bg.jpg" alt="">
+      <img src="assets/img/ricardo-bg.jpg" alt="" class="hero-bg">
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
           <div class="col-lg-9">
-            <h2>Ricardo Coto</h2>
+            <div class="hero-content">
+              <h2 class="mb-0 d-inline-block position-relative" style="z-index:2;">
+                Ricardo Coto
+                <button id="revealBtn" class="btn btn-outline-dark p-0 border-0 bg-transparent">
+                  <img src="assets/img/tux-icon.png" alt="Reveal" style="height: 32px; width: auto;">
+                </button>
+                <div id="tooltip" class="flying-tooltip">  
+                  <strong>Cerro Chirripó, 3,821 meters</strong><br>
+                  The highest mountain in Costa Rica, it is part of the Cordillera de Talamanca, and the range's highest point. It is located in Chirripó National Park and is noted for its ecological wealth.
+                </div>                
+              </h2>
+            
             <p>I'm <span class="typed" data-typed-items="Software Engineer, Developer, Freelancer, Team Lead, Tech Lead">Software Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="https://x.com/richcoto"><i class="bi bi-twitter-x"></i></a>
               <a href="https://www.facebook.com/richcoto/"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/richcoto/"><i class="bi bi-instagram"></i></a>
               <a href="https://www.linkedin.com/in/ricardo-coto-abb97615/"><i class="bi bi-linkedin"></i></a>
+            </div>
             </div>
           </div>
         </div>
@@ -324,6 +336,32 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const button = document.getElementById('revealBtn');
+    const tooltip = document.getElementById('tooltip');
+    const heroSection = document.querySelector('#hero.section.light-background');
+    const nameText = document.querySelector('#hero h2');
+  
+    function activate() {
+      heroSection.style.setProperty('--background-color', 'transparent');
+      nameText.classList.add('alt-color');
+      tooltip.classList.toggle('show');
+    }
+  
+    function deactivate() {
+      heroSection.style.removeProperty('--background-color');
+      nameText.classList.remove('alt-color');
+      tooltip.classList.remove('show');
+    }      
+  
+  
+    button.addEventListener('mousedown', activate);
+    button.addEventListener('mouseup', deactivate);
+    button.addEventListener('mouseleave', deactivate);
+    button.addEventListener('touchstart', activate);
+    button.addEventListener('touchend', deactivate);
+  </script>  
 
 </body>
 

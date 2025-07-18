@@ -525,7 +525,7 @@ section,
   justify-content: center;
 }
 
-.hero img {
+.hero .hero-bg {
   position: absolute;
   inset: 0;
   display: block;
@@ -557,6 +557,15 @@ section,
 .hero p {
   margin: 5px 0 0 0;
   font-size: 26px;
+}
+
+.hero .icon {
+  height: 40px;
+  width: auto;
+  margin-left: 0px;
+  vertical-align: middle;
+  z-index: 2;
+  position: relative;
 }
 
 .hero p span {
@@ -1456,4 +1465,41 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+.alt-color {
+  --heading-color: white;
+}
+
+.flying-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(10px);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  width: 300px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.flying-tooltip.show {
+  display: block;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
 }

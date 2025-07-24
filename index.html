@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGT7BGS25Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TGT7BGS25Z');
+</script>  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Ricardo Coto</title>
@@ -282,8 +291,27 @@
 
       </div>
       <div class="container text-center mt-4">
-        <a href="https://drive.google.com/uc?export=download&id=16trbKvGw6bAOLdOinkiWWhCK7-MPrid1" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Full Version Resume</a>
+        <a
+          href="https://drive.google.com/uc?export=download&id=16trbKvGw6bAOLdOinkiWWhCK7-MPrid1"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="download-resume"
+        >
+          Download Full Version Resume
+        </a>
       </div>
+      
+      <script>
+        const btn = document.getElementById("download-resume");
+        btn.addEventListener("click", function () {
+          gtag('event', 'download_resume', {
+            event_category: 'Resume',
+            event_label: 'Full Version',
+            transport_type: 'beacon'
+          });
+        });
+      </script>
 
     </section><!-- /Resume Section -->
 

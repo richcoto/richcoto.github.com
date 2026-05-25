@@ -512,6 +512,22 @@ section,
   margin-bottom: 0;
 }
 
+#about .section-title p {
+  text-align: left;
+}
+
+#resume .section-title p {
+  text-align: left;
+}
+
+#about.section {
+  padding-bottom: 35px;
+}
+
+#skills.section {
+  padding-top: 35px;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/

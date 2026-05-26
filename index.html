@@ -56,6 +56,7 @@
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
         <li><a href="#skills"><i class="bi bi-person-workspace navicon"></i><span>Skills</span></a></li>
+        <li><a href="#working-on"><i class="bi bi-hdd-stack navicon"></i><span>Working On</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="#footer"><i class="bi bi-link navicon"></i><span>Shortcuts</span></a></li>
       </ul>
@@ -95,7 +96,7 @@
                 </div>                
               </h2>
             
-            <p>I'm <span class="typed" data-typed-items="Software Engineer, Developer, Freelancer, Team Lead, Tech Lead">Software Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>I'm <span class="typed" data-typed-items="AI-assisted Software Engineer, Developer, Freelancer, Team Lead, Tech Lead">Software Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="https://x.com/richcoto"><i class="bi bi-twitter-x"></i></a>
               <a href="https://www.facebook.com/richcoto/"><i class="bi bi-facebook"></i></a>
@@ -327,6 +328,44 @@
       </script>
 
     </section><!-- /Resume Section -->
+
+    <!-- Working On Section -->
+    <section id="working-on" class="working-on section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Currently Working On</h2>
+        <p>Recent items from what I’ve been building and improving.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="working-on-feed">
+          <article class="working-on-item">
+            <div class="working-on-meta">
+              <time datetime="2026-05">May 2026</time>
+              <span class="working-on-subtitle">Scheduled job pattern to delay an outbound service call after event consumption</span>
+            </div>
+            <h3 class="working-on-title">Deferred External API Call via DB-Backed Queue</h3>
+            <p class="working-on-description">
+              A Pub/Sub event consumer that previously made an immediate synchronous call to an external REST API needed refactoring to defer that call by a configurable duration (12 hours). On event receipt, the processor inserts a record into a PostgreSQL queue table with an <code>eligible_after</code> timestamp. A Spring Boot <code>@Scheduled</code> job polls every 5 minutes for eligible records, executes the external API call, and deletes the row on success. Involved: Flyway DB migration, JPA entity/repository, consumer logic modification, and scheduled job implementation. Stack: Java, Spring Boot, GCP Pub/Sub, PostgreSQL, Kubernetes.
+            </p>
+          </article>
+
+          <article class="working-on-item">
+            <div class="working-on-meta">
+              <time datetime="2026-05">May 2026</time>
+              <span class="working-on-subtitle">Java parser implementation for ingesting semi-structured court case records with custom Jackson deserializers and defensive data validation</span>
+            </div>
+            <h3 class="working-on-title">Court Case CSV Parser with Lenient Date Deserialization and Null-Safe Enum Mapping</h3>
+            <p class="working-on-description">
+              Implemented a bulk data parser that processes court case records from CSV files and transforms them into structured JSON objects for downstream consumption. The parser addresses common data quality issues found in legacy court system exports.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+    </section><!-- /Working On Section -->
 
   </main>
 

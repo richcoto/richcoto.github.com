@@ -528,6 +528,69 @@ section,
   padding-top: 35px;
 }
 
+#working-on.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#working-on.section .section-title {
+  padding-bottom: 40px;
+}
+
+.working-on-feed {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.working-on-item {
+  position: relative;
+  padding: 0 0 24px 22px;
+  margin-top: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 35%);
+}
+
+.working-on-item::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background: var(--background-color);
+  border: 2px solid var(--accent-color);
+}
+
+.working-on-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  margin-bottom: 6px;
+}
+
+.working-on-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.working-on-subtitle {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  font-weight: 600;
+}
+
+.working-on-description {
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/

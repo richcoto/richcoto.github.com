@@ -34,7 +34,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=20260529" rel="stylesheet">
+  <link href="assets/css/main.css?v=20260529b" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -373,7 +373,7 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Snake</h2>
-        <p>Take a break at the end of the page. Use arrow keys or the on-screen controls.</p>
+        <p>Do you remember the Snake game back when the Nokia 6120 came out? Yeah, I'm old... Use arrow keys, on-screen controls, or swipe on the game board.</p>
       </div>
 
       <div class="container">
@@ -385,19 +385,19 @@
 
           <canvas id="snake-canvas" width="400" height="400" tabindex="0" aria-label="Snake game board"></canvas>
 
-          <p id="snake-status" class="snake-status">Press Start or Space to play</p>
+          <p id="snake-status" class="snake-status">Press Start, Space, or swipe to play</p>
 
           <div class="snake-controls">
             <button type="button" class="btn btn-primary snake-start-btn" id="snake-start">Start</button>
 
             <div class="snake-dpad" aria-label="Snake direction controls">
               <div class="snake-dpad-row snake-dpad-row-up">
-                <button type="button" class="snake-dpad-btn" data-snake-dir="0,-1" aria-label="Move up">↑</button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="0,-1" aria-label="Move up"><i class="bi bi-arrow-up-short"></i></button>
               </div>
               <div class="snake-dpad-row snake-dpad-row-down">
-                <button type="button" class="snake-dpad-btn" data-snake-dir="-1,0" aria-label="Move left">←</button>
-                <button type="button" class="snake-dpad-btn" data-snake-dir="0,1" aria-label="Move down">↓</button>
-                <button type="button" class="snake-dpad-btn" data-snake-dir="1,0" aria-label="Move right">→</button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="-1,0" aria-label="Move left"><i class="bi bi-arrow-left-short"></i></button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="0,1" aria-label="Move down"><i class="bi bi-arrow-down-short"></i></button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="1,0" aria-label="Move right"><i class="bi bi-arrow-right-short"></i></button>
               </div>
             </div>
           </div>
@@ -460,7 +460,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/snake.js"></script>
+  <script src="assets/js/snake.js?v=20260529"></script>
 
   <script>
     const button = document.getElementById('revealBtn');

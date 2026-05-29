@@ -600,6 +600,7 @@ section,
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  touch-action: none;
 }
 
 .snake-game-hud {
@@ -633,22 +634,36 @@ section,
 .snake-start-btn {
   display: block;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 65%);
 }
 
 .snake-dpad {
   width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent-color), transparent 92%) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 96%) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .snake-dpad-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
 .snake-dpad-row-down {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .snake-dpad-row-up .snake-dpad-btn {
@@ -656,27 +671,66 @@ section,
 }
 
 .snake-dpad-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  min-height: 56px;
+  min-height: 64px;
   margin: 0;
   padding: 0;
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    color-mix(in srgb, var(--accent-color), transparent 90%) 100%
+  );
   color: var(--accent-color);
-  font-size: 22px;
-  line-height: 56px;
+  font-size: 28px;
+  line-height: 1;
   text-align: center;
   cursor: pointer;
-  transition: 0.2s ease;
+  box-shadow:
+    0 4px 0 color-mix(in srgb, var(--accent-color), transparent 45%),
+    0 8px 18px rgba(5, 99, 187, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
-.snake-dpad-btn:hover,
+.snake-dpad-btn .bi {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.snake-dpad-btn:hover {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    color-mix(in srgb, var(--accent-color), transparent 82%) 100%
+  );
+  color: var(--accent-color);
+  transform: translateY(-1px);
+  box-shadow:
+    0 5px 0 color-mix(in srgb, var(--accent-color), transparent 45%),
+    0 10px 22px rgba(5, 99, 187, 0.16);
+}
+
+.snake-dpad-btn:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--accent-color), transparent 45%),
+    0 3px 8px rgba(5, 99, 187, 0.1);
+}
+
 .snake-dpad-btn:focus {
-  background: var(--accent-color);
-  color: var(--contrast-color);
   outline: none;
+}
+
+.snake-dpad-btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-color), transparent 20%);
+  outline-offset: 2px;
 }
 
 /*--------------------------------------------------------------

@@ -136,6 +136,22 @@
     nextDirection = { x, y };
   }
 
+  function applyDirection(x, y) {
+    if (!running) startGame();
+    setDirection(x, y);
+  }
+
+  function handleSwipe(dx, dy) {
+    const minSwipeDistance = 30;
+    if (Math.abs(dx) < minSwipeDistance && Math.abs(dy) < minSwipeDistance) return;
+
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      applyDirection(dx > 0 ? 1 : -1, 0);
+    } else {
+      applyDirection(0, dy > 0 ? 1 : -1);
+    }
+  }
+
   function handleKeydown(event) {
     const key = event.key;
     if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(key)) {
@@ -169,11 +185,55 @@
   document.querySelectorAll("[data-snake-dir]").forEach((button) => {
     button.addEventListener("click", () => {
       const [x, y] = button.dataset.snakeDir.split(",").map(Number);
-      if (!running) startGame();
-      setDirection(x, y);
+      applyDirection(x, y);
       canvas.focus();
     });
   });
+
+  const swipeSurface = document.querySelector(".snake-game-panel");
+  let touchStartX = null;
+  let touchStartY = null;
+
+  if (swipeSurface) {
+    swipeSurface.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      },
+      { passive: true }
+    );
+
+    swipeSurface.addEventListener(
+      "touchmove",
+      (event) => {
+        if (touchStartX !== null) event.preventDefault();
+      },
+      { passive: false }
+    );
+
+    swipeSurface.addEventListener(
+      "touchend",
+      (event) => {
+        if (touchStartX === null || touchStartY === null) return;
+
+        const touch = event.changedTouches[0];
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+        touchStartX = null;
+        touchStartY = null;
+
+        handleSwipe(dx, dy);
+      },
+      { passive: true }
+    );
+
+    swipeSurface.addEventListener("touchcancel", () => {
+      touchStartX = null;
+      touchStartY = null;
+    });
+  }
 
   draw();
 })();

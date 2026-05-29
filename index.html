@@ -58,6 +58,7 @@
         <li><a href="#skills"><i class="bi bi-person-workspace navicon"></i><span>Skills</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="#working-on"><i class="bi bi-hdd-stack navicon"></i><span>Working On</span></a></li>
+        <li><a href="#snake-game"><i class="bi bi-controller navicon"></i><span>Snake</span></a></li>
         <li><a href="#footer"><i class="bi bi-link navicon"></i><span>Shortcuts</span></a></li>
       </ul>
     </nav>
@@ -367,6 +368,40 @@
 
     </section><!-- /Working On Section -->
 
+    <!-- Snake Game Section -->
+    <section id="snake-game" class="snake-game section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Snake</h2>
+        <p>Take a break at the end of the page. Use arrow keys or the on-screen controls.</p>
+      </div>
+
+      <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="snake-game-panel">
+          <div class="snake-game-hud">
+            <span>Score: <strong id="snake-score">0</strong></span>
+            <span>Best: <strong id="snake-best">0</strong></span>
+          </div>
+
+          <canvas id="snake-canvas" width="400" height="400" tabindex="0" aria-label="Snake game board"></canvas>
+
+          <p id="snake-status" class="snake-status">Press Start or Space to play</p>
+
+          <div class="snake-controls">
+            <button type="button" class="btn btn-primary snake-start-btn" id="snake-start">Start</button>
+
+            <div class="snake-dpad" aria-label="Snake direction controls">
+              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-up" data-snake-dir="0,-1" aria-label="Move up">↑</button>
+              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-left" data-snake-dir="-1,0" aria-label="Move left">←</button>
+              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-down" data-snake-dir="0,1" aria-label="Move down">↓</button>
+              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-right" data-snake-dir="1,0" aria-label="Move right">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Snake Game Section -->
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -421,6 +456,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/snake.js"></script>
 
   <script>
     const button = document.getElementById('revealBtn');

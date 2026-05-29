@@ -34,7 +34,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=20260529" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -376,7 +376,7 @@
         <p>Take a break at the end of the page. Use arrow keys or the on-screen controls.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="snake-game-panel">
           <div class="snake-game-hud">
             <span>Score: <strong id="snake-score">0</strong></span>
@@ -391,10 +391,14 @@
             <button type="button" class="btn btn-primary snake-start-btn" id="snake-start">Start</button>
 
             <div class="snake-dpad" aria-label="Snake direction controls">
-              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-up" data-snake-dir="0,-1" aria-label="Move up">↑</button>
-              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-left" data-snake-dir="-1,0" aria-label="Move left">←</button>
-              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-down" data-snake-dir="0,1" aria-label="Move down">↓</button>
-              <button type="button" class="btn btn-outline-primary snake-dpad-btn snake-dpad-right" data-snake-dir="1,0" aria-label="Move right">→</button>
+              <div class="snake-dpad-row snake-dpad-row-up">
+                <button type="button" class="snake-dpad-btn" data-snake-dir="0,-1" aria-label="Move up">↑</button>
+              </div>
+              <div class="snake-dpad-row snake-dpad-row-down">
+                <button type="button" class="snake-dpad-btn" data-snake-dir="-1,0" aria-label="Move left">←</button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="0,1" aria-label="Move down">↓</button>
+                <button type="button" class="snake-dpad-btn" data-snake-dir="1,0" aria-label="Move right">→</button>
+              </div>
             </div>
           </div>
         </div>

@@ -596,15 +596,10 @@ section,
   padding-bottom: 60px;
 }
 
-#snake-game .container:last-of-type {
-  display: flex;
-  justify-content: center;
-}
-
 .snake-game-panel {
-  width: min(100%, 400px);
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .snake-game-hud {
@@ -617,7 +612,7 @@ section,
 
 #snake-canvas {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto;
   border-radius: 8px;
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 35%);
   background: #1e2228;
@@ -627,61 +622,61 @@ section,
 
 .snake-status {
   margin: 12px 0 16px;
+  text-align: center;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
 }
 
 .snake-controls {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 12px;
   width: 100%;
 }
 
 .snake-start-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
+  margin-bottom: 12px;
 }
 
 .snake-dpad {
+  width: 100%;
+}
+
+.snake-dpad-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(56px, auto));
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   width: 100%;
 }
 
-.snake-dpad-up {
+.snake-dpad-row-down {
+  margin-top: 8px;
+}
+
+.snake-dpad-row-up .snake-dpad-btn {
   grid-column: 2;
-  grid-row: 1;
-}
-
-.snake-dpad-left {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.snake-dpad-down {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.snake-dpad-right {
-  grid-column: 3;
-  grid-row: 2;
 }
 
 .snake-dpad-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
   min-height: 56px;
-  font-size: 22px;
-  line-height: 1;
+  margin: 0;
   padding: 0;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent-color);
+  font-size: 22px;
+  line-height: 56px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.snake-dpad-btn:hover,
+.snake-dpad-btn:focus {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  outline: none;
 }
 
 /*--------------------------------------------------------------

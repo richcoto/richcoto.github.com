@@ -336,30 +336,41 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Currently Working On</h2>
-        <p>Recent items from what I’ve been building and improving.</p>
+        <p>Recent work highlights — the kind of problems I’m solving day to day.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="working-on-feed">
           <article class="working-on-item">
             <div class="working-on-meta">
-              <time datetime="2026-05">May 2026</time>
-              <span class="working-on-subtitle">Scheduled job pattern to delay an outbound service call after event consumption</span>
+              <time datetime="2026-08">Aug 2026</time>
+              <span class="working-on-subtitle">Platform migration · GitHub Actions · Kubernetes</span>
             </div>
-            <h3 class="working-on-title">Deferred External API Call via DB-Backed Queue</h3>
+            <h3 class="working-on-title">GitLab to GitHub Migration — Supply Chain Microservices</h3>
             <p class="working-on-description">
-              A Pub/Sub event consumer that previously made an immediate synchronous call to an external REST API needed refactoring to defer that call by a configurable duration (12 hours). On event receipt, the processor inserts a record into a PostgreSQL queue table with an <code>eligible_after</code> timestamp. A Spring Boot <code>@Scheduled</code> job polls every 5 minutes for eligible records, executes the external API call, and deletes the row on success. Involved: Flyway DB migration, JPA entity/repository, consumer logic modification, and scheduled job implementation. Stack: Java, Spring Boot, GCP Pub/Sub, PostgreSQL, Kubernetes.
+              Contributing to Nordstrom’s migration of 150+ supply-chain microservices from GitLab to GitHub Enterprise. I own 13 repositories — services, shared libraries, infra, and CronJobs — converting GitLab CI to GitHub Actions, deploying to Kubernetes via nsk-deploy, and tightening IAM from broad deployment roles to scoped IRSA. Also handled Vault secrets, Terraform state migration, per-app S3 DLQ CronJobs, and Gradle 7→8 upgrades across Java/Spring Boot services.
             </p>
           </article>
 
           <article class="working-on-item">
             <div class="working-on-meta">
-              <time datetime="2026-05">May 2026</time>
-              <span class="working-on-subtitle">Java parser implementation for ingesting semi-structured court case records with custom Jackson deserializers and defensive data validation</span>
+              <time datetime="2026-08">Aug 2026</time>
+              <span class="working-on-subtitle">Browser automation · GraalJS · Selenium</span>
             </div>
-            <h3 class="working-on-title">Court Case CSV Parser with Lenient Date Deserialization and Null-Safe Enum Mapping</h3>
+            <h3 class="working-on-title">Fixing a Navigation Race in Court-Records Scraper</h3>
             <p class="working-on-description">
-              Implemented a bulk data parser that processes court case records from CSV files and transforms them into structured JSON objects for downstream consumption. The parser addresses common data quality issues found in legacy court system exports.
+              Diagnosed a production scraper failing mid-run at a high rate: a referer-spoof script fired two navigations during page unload, killing the WebDriver in ~4ms. Retry logic already handled the soft failure path, but not when the same issue surfaced as a thrown exception. Scoped a targeted JavaScript fix on GraalJS/Selenium — no library release required.
+            </p>
+          </article>
+
+          <article class="working-on-item">
+            <div class="working-on-meta">
+              <time datetime="2026-08">Aug 2026</time>
+              <span class="working-on-subtitle">Quarkus · REST API · Vendor integration</span>
+            </div>
+            <h3 class="working-on-title">CAPTCHA Bad-Solve Feedback Endpoint</h3>
+            <p class="working-on-description">
+              Built a Quarkus REST endpoint to report incorrectly solved CAPTCHAs back to the upstream vendor — direct cost and accuracy impact per solve. Implemented against the real upstream API (not a stale ticket design), documented API limitations around error semantics, and tracked cross-repo release sequencing while waiting on shared-library merges.
             </p>
           </article>
 
